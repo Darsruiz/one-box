@@ -1,5 +1,6 @@
-<div class="grid mx-5 sm:grid-cols-12 md:grid-cols-12 md:items-center sm:gap-4 md:mx-36" >
-    <div class=" container col-span-12 mt-5 bg-white rounded-lg md:col-span-6 drop-shadow-lg" *ngFor="let event of events" >
-            <app-card [event]="event" ></app-card>
-    </div>
+<div class="grid grid-cols-12 gap-5 mx-5 mt-3 md:mt-0 md:mx-24">
+    <app-card 
+        class="flex flex-col h-full col-span-12 mt-5 bg-white rounded-lg md:col-span-6 drop-shadow-lg" 
+        *ngFor="let event of events" [event]="event">
+    </app-card>
 </div>

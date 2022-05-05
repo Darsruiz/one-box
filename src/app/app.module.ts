@@ -6,6 +6,7 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { MainComponent } from './pages/main/main.component';
 import { CardComponent } from './shared/card/card.component';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NgModule } from '@angular/core';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
