@@ -1,4 +1,4 @@
-export interface Sessions {
+export interface ISessionData {
     date: Date;
     availability: number;
 }
