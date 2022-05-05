@@ -1,0 +1,7 @@
+
+    <div class="mx-3 my-2 text-lg text-blue-400">{{ event.title }}</div>
+    <div class="mx-1 text-sm text-blue-400 ">{{ event.subtitle }}</div>
+    <img class="my-1 " src="{{ event.image }}" alt="sample-image">
+    <div class="mx-1 my-1 text-sm"> {{event.startDate?.toDateString() }} - {{ event.endDate?.toDateString() }} </div>
+    <div class="mx-1 mb-2 text-sm " >{{ event.description }}</div>
+    <div class="p-2 mt-3 text-center text-white bg-blue-500 rounded-b-lg" [routerLink]="['/detail/{{event.id}}']" >Comprar</div>

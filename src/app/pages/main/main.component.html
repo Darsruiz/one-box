@@ -1,42 +1,5 @@
 <div class="grid mx-5 sm:grid-cols-12 md:grid-cols-12 md:items-center sm:gap-4 md:mx-36" >
-    <div class="col-span-12 mt-5 bg-white rounded-lg md:col-span-6 drop-shadow-lg" >
-        <div class="container">
-            <div class="mx-3 my-2 text-lg text-blue-400">TITLE</div>
-            <div class="mx-1 text-sm text-blue-400 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloremque quos qui magnam sunt, nemo aut, excepturi in nesciunt.</div>
-            <img class="my-1" src="../../../assets/img/sample-image.jpg" alt="sample-image">
-            <div class="mx-1 my-1 text-sm"> 01/10/2015 - 30/10/2015</div>
-            <div class="mx-1 text-sm " >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fuga facilis nihil aspernatur neque tempora, architecto voluptatem vero non nisi quibusdam accusantium sit sapiente laborum et itaque hic ad autem?</div>
-            <div class="p-2 mt-1 text-center text-white bg-blue-500 rounded-b-lg" >Button</div>
-        </div>
-    </div>
-    <div class="col-span-12 mt-5 bg-white rounded-lg md:col-span-6 drop-shadow-lg" >
-        <div class="container">
-            <div class="mx-3 my-2 text-lg text-blue-400">TITLE</div>
-            <div class="mx-1 text-sm text-blue-400 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloremque quos qui magnam sunt, nemo aut, excepturi in nesciunt.</div>
-            <img class="my-1" src="../../../assets/img/sample-image.jpg" alt="sample-image">
-            <div class="mx-1 my-1 text-sm"> 01/10/2015 - 30/10/2015</div>
-            <div class="mx-1 text-sm " >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fuga facilis nihil aspernatur neque tempora, architecto voluptatem vero non nisi quibusdam accusantium sit sapiente laborum et itaque hic ad autem?</div>
-            <div class="p-2 mt-1 text-center text-white bg-blue-500 rounded-b-lg" >Button</div>
-        </div>
-    </div>
-    <div class="col-span-12 mt-5 bg-white rounded-lg md:col-span-6 drop-shadow-lg" >
-        <div class="container">
-            <div class="mx-3 my-2 text-lg text-blue-400">TITLE</div>
-            <div class="mx-1 text-sm text-blue-400 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloremque quos qui magnam sunt, nemo aut, excepturi in nesciunt.</div>
-            <img class="my-1" src="../../../assets/img/sample-image.jpg" alt="sample-image">
-            <div class="mx-1 my-1 text-sm"> 01/10/2015 - 30/10/2015</div>
-            <div class="mx-1 text-sm " >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fuga facilis nihil aspernatur neque tempora, architecto voluptatem vero non nisi quibusdam accusantium sit sapiente laborum et itaque hic ad autem?</div>
-            <div class="p-2 mt-1 text-center text-white bg-blue-500 rounded-b-lg" >Button</div>
-        </div>
-    </div>
-    <div class="col-span-12 mt-5 bg-white rounded-lg md:col-span-6 drop-shadow-lg" >
-        <div class="container">
-            <div class="mx-3 my-2 text-lg text-blue-400">TITLE</div>
-            <div class="mx-1 text-sm text-blue-400 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloremque quos qui magnam sunt, nemo aut, excepturi in nesciunt.</div>
-            <img class="my-1" src="../../../assets/img/sample-image.jpg" alt="sample-image">
-            <div class="mx-1 my-1 text-sm"> 01/10/2015 - 30/10/2015</div>
-            <div class="mx-1 text-sm " >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fuga facilis nihil aspernatur neque tempora, architecto voluptatem vero non nisi quibusdam accusantium sit sapiente laborum et itaque hic ad autem?</div>
-            <div class="p-2 mt-1 text-center text-white bg-blue-500 rounded-b-lg" >Button</div>
-        </div>
+    <div class=" container col-span-12 mt-5 bg-white rounded-lg md:col-span-6 drop-shadow-lg" *ngFor="let event of events" >
+            <app-card [event]="event" ></app-card>
     </div>
 </div>
