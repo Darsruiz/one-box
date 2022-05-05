@@ -4,7 +4,7 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { MainComponent } from './pages/main/main.component';
 
 const routes: Routes = [
-  { path: 'main', component: MainComponent, pathMatch: 'full' },
+  { path: '**', component: MainComponent, pathMatch: 'full' },
   { path: 'detail/:id', component: DetailComponent }
 ]
 @NgModule({

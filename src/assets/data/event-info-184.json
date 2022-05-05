@@ -1,0 +1,30 @@
+{
+    "event": {
+        "id": "184",
+        "title": "PABLO ALBORÁN",
+        "subtitle": "Terral (2014)",
+        "image": "/assets/img/sample-image.jpg"
+    },
+    "sessions": [
+        {
+            "date": "1443564000000",
+            "availability": "6"
+        },
+        {
+            "date": "1442959200000",
+            "availability": "3"
+        },
+        {
+            "date": "1447196400000",
+            "availability": "10"
+        },
+        {
+            "date": "1444428000000",
+            "availability": "5"
+        },
+        {
+            "date": "1446332400000",
+            "availability": "8"
+        }
+    ]
+}

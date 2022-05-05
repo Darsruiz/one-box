@@ -1,0 +1,26 @@
+{
+    "event": {
+        "id": "68",
+        "title": "JOAN MANUEL SERRAT",
+        "subtitle": "Antología desordenada",
+        "image": "/assets/img/sample-image.jpg"
+    },
+    "sessions": [
+        {
+            "date": "1444255200000",
+            "availability": "2"
+        },
+        {
+            "date": "1443650400000",
+            "availability": "4"
+        },
+        {
+            "date": "1445551200000",
+            "availability": "1"
+        },
+        {
+            "date": "1444860000000",
+            "availability": "8"
+        }
+    ]
+}
