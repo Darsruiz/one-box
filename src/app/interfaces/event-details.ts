@@ -1,4 +1,4 @@
-export interface IEventData {
+export interface IEventDetails {
     id: number;
     title: string;
     subtitle: string;
