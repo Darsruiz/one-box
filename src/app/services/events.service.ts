@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { IEventInfo } from '../interfaces/event-info';
-import { IEventData } from '../interfaces/events';
+import { IEventDetails } from '../interfaces/event-details';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,9 @@ export class EventsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getEvents(): Observable<IEventData[]> {
+  getEvents(): Observable<IEventDetails[]> {
     return this.httpClient
-      .get<IEventData[]>("assets/data/events.json")
+      .get<IEventDetails[]>("assets/data/events.json")
       .pipe(retry(1), catchError(this.handleError));;
   };
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IEventData } from 'src/app/interfaces/events';
+import { IEventDetails } from 'src/app/interfaces/event-details';
 import { EventsService } from 'src/app/services/events.service';
 @Component({
   selector: 'app-main',
@@ -8,7 +8,7 @@ import { EventsService } from 'src/app/services/events.service';
 })
 export class MainComponent implements OnInit {
 
-  events!: IEventData[];
+  events!: IEventDetails[];
   constructor(private eventsService: EventsService) { }
   ngOnInit() {
     this.getEvents();
