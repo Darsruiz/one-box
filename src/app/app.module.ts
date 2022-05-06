@@ -7,6 +7,8 @@ import { MainComponent } from './pages/main/main.component';
 import { CardComponent } from './shared/card/card.component';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ShoppingCartComponent } from './shared/shopping-cart/shopping-cart.component';
+import { SessionsListComponent } from './pages/detail/sessions-list/sessions-list.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     DetailComponent,
     MainComponent,
     CardComponent,
+    ShoppingCartComponent,
+    SessionsListComponent,
   ],
   imports: [
     BrowserModule,

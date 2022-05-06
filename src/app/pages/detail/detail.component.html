@@ -1,1 +1,10 @@
-<p>detail works!</p>
+<div class="grid grid-cols-12 gap-5 mx-5 mt-3 md:mt-0 md:mx-24">
+    <app-sessions-list
+        class="flex flex-col h-full col-span-6 mt-5 bg-white rounded-lg drop-shadow-lg"
+        [sessions]="eventInfo.sessions"
+        >
+    </app-sessions-list>
+    <app-shopping-cart
+        class="flex flex-col h-full col-span-6 mt-5 bg-white rounded-lg drop-shadow-lg">
+    </app-shopping-cart>
+</div>

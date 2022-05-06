@@ -1,0 +1,23 @@
+<table class="table-auto">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Disponibility</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let session of sessions" class="mt-4 text-center">
+      <tr>
+        <td>{{ConvertDate(session.date)}}</td>
+        <td>{{session.availability}}</td>
+        <td class="grid grid-cols-2 gap-4 mr-4">
+            <button (click)="AddSession(session.date)" class="col-span-1 rounded-lg bg-waikawa-gray-900" >
+                +
+            </button>
+            <button (click)="DelSession(session.date)" class="col-span-1 rounded-lg bg-waikawa-gray-600">
+                -
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
