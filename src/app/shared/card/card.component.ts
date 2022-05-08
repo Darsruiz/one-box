@@ -16,12 +16,11 @@ export class CardComponent {
     this.router.navigate(['/detail', id]);
   }
 
-  ConvertDate(date: string): string {
-    let localeDate = new Date
+  convertDate(date: string): string {
+    return new Date
       (
         parseInt(date)
       )
       .toLocaleDateString();
-    return localeDate;
   }
 }

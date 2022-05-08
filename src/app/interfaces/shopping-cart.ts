@@ -1,15 +1,11 @@
 import { IEventDetails } from './event-details';
 
-export interface IShoppingCart {
-    items: IShoppingCartItems[];
+export interface IShoppingCartQuantity {
+    quantity: number,
+    item: IShoppingCartItem
 }
-
-export interface IShoppingCartItems {
+export interface IShoppingCartItem {
     eventId: number;
-    event: IEventDetails;
-    eventSessions: ISessionCart[];
-}
-export interface ISessionCart {
+    event?: IEventDetails;
     sessionDate: string;
-    quantity: number;
 }

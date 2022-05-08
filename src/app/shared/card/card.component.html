@@ -1,10 +1,10 @@
 
-    <div class="flex-shrink m-2 text-waikawa-gray-500" (click)="ViewDetail(event.id)">
+    <div class="flex-shrink m-2 cursor-pointer text-waikawa-gray-500" (click)="ViewDetail(event.id)">
         <p class="text-xl">{{event.title}}</p>
         <p>{{ event.subtitle }}</p>
     </div>
-    <img class="flex-1" (click)="ViewDetail(event.id)" src="{{ event.image }}" alt="sample-image">
-    <div class="mx-2 my-1 text-sm"> {{ ConvertDate(event.startDate) }} - {{ ConvertDate(event.endDate) }} </div>
+    <img class="flex-1 cursor-pointer" (click)="ViewDetail(event.id)" src="{{ event.image }}" alt="sample-image">
+    <div class="mx-2 my-1 text-sm"> {{ convertDate(event.startDate) }} - {{ convertDate(event.endDate) }} </div>
     <div class="flex-1 hidden mx-2 mb-2 md:block " [innerHtml]="event.description" ></div>
     <button class="p-2 mt-3 text-center text-white rounded-b-lg bg-waikawa-gray-600" (click)="ViewDetail(event.id)">
         Comprar

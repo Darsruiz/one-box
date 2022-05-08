@@ -1,1 +1,20 @@
-<p>shopping-cart works!</p>
+<table class="table-auto">
+    <thead class="mb-4">
+      <tr>
+        <th>Date</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let items of cart" class="mt-4 text-center">
+      <tr>
+        <td>{{convertDate(items.item.sessionDate)}}</td>
+        <td>{{items.quantity}}</td>
+        <td class="mx-4 text-white">
+            <button (click)="emptySession(items.item.sessionDate, items.item.eventId)">
+                <img class="max-h-6" src="../../../assets/img/trash.png" alt="trashIcon">
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
