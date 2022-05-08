@@ -14,13 +14,13 @@
     </thead>
     <tbody *ngFor="let session of eventInfo.sessions" class="mt-4 text-center">
       <tr>
-        <td>{{ConvertDate(session.date)}}</td>
+        <td>{{convertDate(session.date)}}</td>
         <td>{{session.availability}}</td>
         <td class="grid grid-cols-2 gap-6 mx-4 text-white">
-            <button (click)="AddSession(session.date, session.availability)" class="col-span-1 rounded-lg bg-waikawa-gray-800" >
+            <button (click)="addSession(session.date, session.availability)" class="col-span-1 rounded-lg bg-waikawa-gray-800" >
                 +
             </button>
-            <button (click)="DelSession(session.date, session.availability)" class="col-span-1 bg-red-800 rounded-lg">
+            <button (click)="delSession(session.date, session.availability)" class="col-span-1 bg-red-800 rounded-lg">
                 -
             </button>
         </td>

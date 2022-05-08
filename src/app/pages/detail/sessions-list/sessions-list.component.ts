@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IEventInfo } from 'src/app/interfaces/event-info';
 
 @Component({
@@ -9,32 +9,31 @@ import { IEventInfo } from 'src/app/interfaces/event-info';
 export class SessionsListComponent {
 
   @Input() eventInfo!: IEventInfo;
-  @Output() EmitAddSession = new EventEmitter<string>();
-  @Output() EmitDelSession = new EventEmitter<{ date: string, currentAvailability: number }>();
+  @Output() EmitaddSession = new EventEmitter<string>();
+  @Output() EmitdelSession = new EventEmitter<{ date: string, currentAvailability: number }>();
 
   constructor() { }
 
-  ConvertDate(date: string): string {
-    let localeDate = new Date
+  convertDate(date: string): string {
+    return new Date
       (
         parseInt(date)
       )
       .toLocaleDateString();
-    return localeDate;
   }
 
-  AddSession(date: string, availability: number): void {
+  addSession(date: string, availability: number): void {
     if (availability <= 0) {
       return alert("There aren't any more tickets available")
     }
-    this.EmitAddSession.emit(date);
+    this.EmitaddSession.emit(date);
   }
 
-  DelSession(date: string, currentAvailability: number): void {
+  delSession(date: string, currentAvailability: number): void {
     let e = {
       date,
       currentAvailability
     }
-    this.EmitDelSession.emit(e);
+    this.EmitdelSession.emit(e);
   }
 }
