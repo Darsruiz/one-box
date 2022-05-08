@@ -18,17 +18,40 @@ export class DetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
-      this.id = params['id']
+      this.id = params['id'];
     });
 
     this.getEventInfo();
   }
 
   getEventInfo(): void {
-    this.eventsService.getEventInfo(this.id).subscribe(data => this.eventInfo = data)
+    this.eventsService.getEventInfo(this.id).subscribe(data => this.eventInfo = data);
   }
 
-  ngOnDestroy() {
+  AddSession(date: string) {
+    let found = this.eventInfo.sessions.find(x => x.date == date)
+    if (found != undefined) {
+      found.availability--;
+    }
+    this.eventsService.addSessionToCart(date, this.id)
+  }
+  DelSession(e: { date: string, currentAvailability: number }) {
+    let found = this.eventInfo.sessions.find(x => x.date == e.date)
+    let foundElem = this.eventsService.delSessionFromCart(e.date, this.id)
+    if (found != undefined && foundElem != -1) {
+      found.availability++
+    }
+    else {
+      alert("You've reached the maximum ammount of available tickets")
+    }
+  };
+
+  EmptySession(date: string) {
+    this.eventsService.emptySessionOnCart(date, this.id);
+    this.getEventInfo();
+  }
+
+  ngOnDestroy(): void {
     this.routeSub.unsubscribe();
   }
 }

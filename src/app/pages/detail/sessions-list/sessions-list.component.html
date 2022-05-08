@@ -1,20 +1,26 @@
+<div class="py-5 rounded-t-lg bg-waikawa-gray-900" >
+  <p class="text-2xl text-center text-white" >
+    {{ eventInfo.event.title }}
+  </p>
+</div>
+
 <table class="table-auto">
-    <thead>
+    <thead class="mb-4">
       <tr>
         <th>Date</th>
         <th>Disponibility</th>
         <th>Options</th>
       </tr>
     </thead>
-    <tbody *ngFor="let session of sessions" class="mt-4 text-center">
+    <tbody *ngFor="let session of eventInfo.sessions" class="mt-4 text-center">
       <tr>
         <td>{{ConvertDate(session.date)}}</td>
         <td>{{session.availability}}</td>
-        <td class="grid grid-cols-2 gap-4 mr-4">
-            <button (click)="AddSession(session.date)" class="col-span-1 rounded-lg bg-waikawa-gray-900" >
+        <td class="grid grid-cols-2 gap-6 mx-4 text-white">
+            <button (click)="AddSession(session.date, session.availability)" class="col-span-1 rounded-lg bg-waikawa-gray-800" >
                 +
             </button>
-            <button (click)="DelSession(session.date)" class="col-span-1 rounded-lg bg-waikawa-gray-600">
+            <button (click)="DelSession(session.date, session.availability)" class="col-span-1 bg-red-800 rounded-lg">
                 -
             </button>
         </td>

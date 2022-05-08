@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ISessionData } from 'src/app/interfaces/sessions';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IEventInfo } from 'src/app/interfaces/event-info';
 
 @Component({
   selector: 'app-sessions-list',
@@ -8,7 +8,9 @@ import { ISessionData } from 'src/app/interfaces/sessions';
 })
 export class SessionsListComponent {
 
-  @Input() sessions!: ISessionData[];
+  @Input() eventInfo!: IEventInfo;
+  @Output() EmitAddSession = new EventEmitter<string>();
+  @Output() EmitDelSession = new EventEmitter<{ date: string, currentAvailability: number }>();
 
   constructor() { }
 
@@ -21,11 +23,18 @@ export class SessionsListComponent {
     return localeDate;
   }
 
-  AddSession(date: string): void {
-    alert("Added!");
+  AddSession(date: string, availability: number): void {
+    if (availability <= 0) {
+      return alert("There aren't any more tickets available")
+    }
+    this.EmitAddSession.emit(date);
   }
 
-  DelSession(date: string): void {
-    alert("Deleted!")
+  DelSession(date: string, currentAvailability: number): void {
+    let e = {
+      date,
+      currentAvailability
+    }
+    this.EmitDelSession.emit(e);
   }
 }
