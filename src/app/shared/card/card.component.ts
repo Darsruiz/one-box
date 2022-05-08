@@ -1,25 +1,27 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IEventData } from 'src/app/interfaces/events';
+import { IEventDetails } from 'src/app/interfaces/event-details';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
 
-  @Input() event!: IEventData;
+  @Input() event!: IEventDetails;
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    let start = parseInt(this.event.startDate);
-    let end = parseInt(this.event.endDate);
-    this.event.startDate = new Date(start).toLocaleDateString();
-    this.event.endDate = new Date(end).toLocaleDateString();
-  }
-
   ViewDetail(id: number): void {
     this.router.navigate(['/detail', id]);
+  }
+
+  ConvertDate(date: string): string {
+    let localeDate = new Date
+      (
+        parseInt(date)
+      )
+      .toLocaleDateString();
+    return localeDate;
   }
 }

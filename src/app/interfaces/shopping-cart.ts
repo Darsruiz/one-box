@@ -1,4 +1,4 @@
-import { IEventDetails } from "./event-details";
+import { IEventDetails } from './event-details';
 
 export interface IShoppingCart {
     items: IShoppingCartItems[];
@@ -9,7 +9,7 @@ export interface IShoppingCartItems {
     event: IEventDetails;
     eventSessions: ISessionCart[];
 }
-export interface ISessionCart { // This wouldn't be needed if sessions referenced the eventId they are linked to.
+export interface ISessionCart {
     sessionDate: string;
     quantity: number;
 }

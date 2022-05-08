@@ -4,7 +4,7 @@
         <p>{{ event.subtitle }}</p>
     </div>
     <img class="flex-1" (click)="ViewDetail(event.id)" src="{{ event.image }}" alt="sample-image">
-    <div class="mx-2 my-1 text-sm"> {{ event.startDate }} - {{ event.endDate }} </div>
+    <div class="mx-2 my-1 text-sm"> {{ ConvertDate(event.startDate) }} - {{ ConvertDate(event.endDate) }} </div>
     <div class="flex-1 hidden mx-2 mb-2 md:block " [innerHtml]="event.description" ></div>
     <button class="p-2 mt-3 text-center text-white rounded-b-lg bg-waikawa-gray-600" (click)="ViewDetail(event.id)">
         Comprar
