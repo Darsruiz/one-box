@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IEventDetails } from 'src/app/interfaces/event-details';
 import { EventsService } from 'src/app/services/events.service';
 @Component({
@@ -8,14 +9,10 @@ import { EventsService } from 'src/app/services/events.service';
 })
 export class MainComponent implements OnInit {
 
-  events!: IEventDetails[];
+  events!: Observable<IEventDetails[]>;
   constructor(private eventsService: EventsService) { }
   ngOnInit() {
-    this.getEvents();
+    this.events = this.eventsService.getEvents()
   }
 
-  getEvents(): void {
-    this.eventsService.getEvents()
-      .subscribe(data => { this.events = data.sort((a, b) => { return parseInt(b.endDate) - parseInt(a.endDate) }) });
-  }
 }

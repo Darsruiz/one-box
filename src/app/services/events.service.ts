@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Observable, retry, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, retry, throwError } from 'rxjs';
 import { IEventInfo } from '../interfaces/event-info';
 import { IEventDetails } from '../interfaces/event-details';
 import { IShoppingCartItem, IShoppingCartQuantity } from '../interfaces/shopping-cart';
@@ -20,7 +20,8 @@ export class EventsService {
   getEvents(): Observable<IEventDetails[]> {
     return this.httpClient
       .get<IEventDetails[]>("assets/data/events.json")
-      .pipe(retry(1), catchError(this.handleError));
+      .pipe(retry(1), catchError(this.handleError))
+      .pipe(map(x => x.sort((a, b) => { return parseInt(b.endDate) - parseInt(a.endDate) })));
   };
 
   getEventInfo(id: number): Observable<IEventInfo> {

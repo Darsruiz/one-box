@@ -1,6 +1,5 @@
 <div class="grid grid-cols-12 gap-5 mx-5 mt-3 md:mt-0 md:mx-24">
-    <app-card 
-        class="flex flex-col h-full col-span-12 mt-5 bg-white rounded-lg md:col-span-6 drop-shadow-lg" 
-        *ngFor="let event of events" [event]="event">
+    <app-card class="flex flex-col h-full col-span-12 mt-5 bg-white rounded-lg md:col-span-6 drop-shadow-lg"
+        *ngFor="let event of events | async" [event]="event">
     </app-card>
 </div>
