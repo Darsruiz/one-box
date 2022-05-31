@@ -15,12 +15,4 @@ export class CardComponent {
   ViewDetail(id: number): void {
     this.router.navigate(['/detail', id]);
   }
-
-  convertDate(date: string): string {
-    return new Date
-      (
-        parseInt(date)
-      )
-      .toLocaleDateString();
-  }
 }
